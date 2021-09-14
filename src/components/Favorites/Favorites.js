@@ -4,8 +4,8 @@ import React, { Component } from "react";
 import './Favorites.css';
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import removeMovieFavorite from "../../actions/removeMovieFavorites";
-import { bindActionCreators } from "redux";
+import removeMovieFavorite from "../../redux/actions/removeMovieFavorites";
+// import { bindActionCreators } from "redux";
 
 // traducir un componente de clase a un componente de funcion !
 // function ConnectedList({favorites, removeFromFavorites}){

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Movie.css';
-import getMovieDetail from "../../actions/getMovieDetail";
+import getMovieDetail from "../../redux/actions/getMovieDetail";
 
 
 class Movie extends React.Component {
