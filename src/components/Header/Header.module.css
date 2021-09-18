@@ -1,0 +1,31 @@
+.header {
+    width: 100%;
+    cursor: pointer;
+    position: fixed;
+    background-color: #03071e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    font-size: 3vw;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    box-shadow: 0px 1px 2px #bf4342;
+    text-decoration: none;
+    color: rgb(255, 240, 243, 0.8);
+}
+
+.header:hover {
+    color: rgb(255, 240, 243);
+}
+
+@media (max-width: 1000px) {
+    .header {
+        padding-top: 15px;
+        font-size: 5vw;
+        color: rgb(255, 240, 243, 0.8);
+    }
+    .header:hover {
+        color: rgb(255, 240, 243);
+    }
+}

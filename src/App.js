@@ -1,16 +1,17 @@
 import React from "react";
+import './App.css';
 // import { Route } from "react-router-dom";
 // import Favorites from "./components/Favorites/Favorites";
 // import Movie from "./components/Movie/Movie";
-import NavBar from "./components/NavBar/NavBar";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-      <React.Fragment>
-          <NavBar />
-          {/* <Route path="/favs" component={Favorites} />
+    <React.Fragment>
+      <Header />
+      {/* <Route path="/favs" component={Favorites} />
           <Route path="/movie/:id" component={Movie} />  */}
-      </React.Fragment>
+    </React.Fragment>
   );
 }
 
