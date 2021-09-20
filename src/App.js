@@ -2,7 +2,6 @@ import React from "react";
 import './App.css';
 // import { Route } from "react-router-dom";
 // import Favorites from "./components/Favorites/Favorites";
-// import Movie from "./components/Movie/Movie";
 import Header from "./components/Header/Header";
 
 function App() {
