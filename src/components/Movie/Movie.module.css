@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  justify-content: center;
+  background-color: rgba(73, 80, 87, 0.2);
+  border-radius: 12px
+}
+
+.dimg {
+  width: 300px;
+}
+
+.des {
+  align-items: center;
+}
+
+.title {
+  color: antiquewhite;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+}

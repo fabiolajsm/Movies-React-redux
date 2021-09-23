@@ -1,0 +1,8 @@
+.ctn {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 50%;
+    height: 400px;
+}
