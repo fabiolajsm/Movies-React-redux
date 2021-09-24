@@ -1,7 +1,9 @@
-export const ADD_MOVIE_FAVORITE = 'ADD_MOVIE_FAVORITE';
-export const REMOVE_MOVIE_FAVORITE = 'REMOVE_MOVIE_FAVORITE';
+export const ADD_WATCH = 'ADD_WATCH';
+export const REMOVE_WATCH = 'REMOVE_WATCH';
 export const GET_MOVIES = 'GET_MOVIES';
 export const GET_MOVIE_DETAIL = 'GET_MOVIES';
+export const ADD_WATCHED = 'ADD_WATCHED';
+export const REMOVE_WATCHED = 'REMOVE_WATCHED';
 export const API = '528561cd';
 
 export function getMovies(title) {
@@ -14,8 +16,27 @@ export function getMovies(title) {
     };
 }
 
-export function addMovieFavorite(movie) {
-    return { type: ADD_MOVIE_FAVORITE, payload: movie };
+export function addWatch(movie) {
+    return { type: ADD_WATCH, payload: movie };
+}
+
+export function addWatched(movie) {
+    return { type: ADD_WATCHED, payload: movie };
+}
+
+
+export function removeWatch(id) {
+    return {
+        type: REMOVE_WATCH,
+        payload: id
+    }
+}
+
+export function removeWatched(id) {
+    return {
+        type: REMOVE_WATCHED,
+        payload: id
+    }
 }
 
 export function getMovieDetail(id) {
@@ -23,12 +44,5 @@ export function getMovieDetail(id) {
         return fetch(`http://www.omdbapi.com/?apikey=${API}&i=${id}`)
             .then(response => response.json())
             .then(json => { dispatch({ type: GET_MOVIE_DETAIL, payload: json }); });
-    }
-}
-
-export function removeMovieFavorite(id) {
-    return {
-        type: REMOVE_MOVIE_FAVORITE,
-        payload: id
     }
 }

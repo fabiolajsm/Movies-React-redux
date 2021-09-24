@@ -1,8 +1,10 @@
 .ctn {
-    margin: auto;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-items: center;
     align-items: center;
-    padding: 2rem;
-    width: 50%;
-    height: 400px;
+    grid-gap: 50px;
+    gap: 50px;
+    border-radius: 12px;
+    margin-top: 1rem;
 }

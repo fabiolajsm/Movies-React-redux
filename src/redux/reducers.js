@@ -1,7 +1,8 @@
-import { ADD_MOVIE_FAVORITE, REMOVE_MOVIE_FAVORITE, GET_MOVIES, GET_MOVIE_DETAIL } from './actions';
+import { ADD_WATCH, REMOVE_WATCH, GET_MOVIES, GET_MOVIE_DETAIL, ADD_WATCHED, REMOVE_WATCHED } from './actions';
 
 const initialState = {
-    moviesFavourites: [],
+    watch: [],
+    watched: [],
     moviesLoaded: [],
     movieDetail: undefined
 };
@@ -14,10 +15,14 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 moviesLoaded: action.payload.Search
             };
-        case ADD_MOVIE_FAVORITE:
-            return { ...state, moviesFavourites: state.moviesFavourites.concat(action.payload) };
-        case REMOVE_MOVIE_FAVORITE:
-            return { ...state, moviesFavourites: state.moviesFavourites.filter((movie) => movie.id !== action.payload) }
+        case ADD_WATCH:
+            return { ...state, watch: state.watch.concat(action.payload) };
+        case REMOVE_WATCH:
+            return { ...state, watch: state.watch.filter((movie) => movie.id !== action.payload) }
+        case ADD_WATCHED:
+            return { ...state, watched: state.watched.concat(action.payload) };
+        case REMOVE_WATCHED:
+            return { ...state, watched: state.watched.filter((movie) => movie.id !== action.payload) }
         case GET_MOVIE_DETAIL:
             return { ...state, movieDetail: action.payload }
         default:
