@@ -6,6 +6,10 @@ export default function Movie({ movie }) {
         <div className={styles.row} key={movie.imdbID}>
             <h3 className={styles.title}>{movie.Title}</h3>
             <img className={styles.img} src={movie.Poster.length > 7 ? movie.Poster : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"} alt="" />
+            <div className={styles.buttons}>
+                <button type="button" class="btn btn-outline-secondary">Add Watch</button>
+                <button type="button" class="btn btn-outline-secondary">Add Watched</button>
+            </div>
         </div>
     );
 };

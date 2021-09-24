@@ -31,3 +31,11 @@
   padding: 10px;
   border-radius: 5%;
 }
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  padding: 10px;
+}
