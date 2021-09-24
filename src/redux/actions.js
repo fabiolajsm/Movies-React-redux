@@ -11,7 +11,7 @@ export function getMovies(title) {
         return fetch(`https://www.omdbapi.com/?apikey=${API}&s=${title}`)
             .then(response => response.json())
             .then(json => {
-                return json ? dispatch({ type: GET_MOVIES, payload: json }) : console.log("error get movie");
+                json.Search !== undefined ? dispatch({ type: GET_MOVIES, payload: json }) : alert("Movie/Serie not found.")
             });
     };
 }
