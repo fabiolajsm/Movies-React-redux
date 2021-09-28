@@ -37,16 +37,16 @@
   justify-content: center;
   width: 350px;
   height: 400px;
-  padding: 10px;
+  padding: 0px 15px;
   border-radius: 5%;
 }
 
 .buttons {
   display: flex;
-  align-items: center;
-  margin: auto;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .position {
