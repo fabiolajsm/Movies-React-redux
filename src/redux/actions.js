@@ -1,7 +1,7 @@
 export const ADD_WATCH = 'ADD_WATCH';
 export const REMOVE_WATCH = 'REMOVE_WATCH';
 export const GET_MOVIES = 'GET_MOVIES';
-export const GET_MOVIE_DETAIL = 'GET_MOVIES';
+export const GET_MOVIE_DETAIL = 'GET_DETAIL';
 export const ADD_WATCHED = 'ADD_WATCHED';
 export const REMOVE_WATCHED = 'REMOVE_WATCHED';
 export const API = '528561cd';

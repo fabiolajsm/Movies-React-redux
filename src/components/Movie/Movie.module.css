@@ -2,6 +2,7 @@
   display: inline-table;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
   align-items: center;
   height: 350px;
   width: 350px;
@@ -39,4 +40,8 @@
   margin: auto;
   justify-content: center;
   padding: 10px;
+}
+
+.position {
+  position: relative;
 }

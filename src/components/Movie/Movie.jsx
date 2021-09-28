@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addWatch, addWatched, removeWatch, removeWatched } from "../../redux/actions";
 import styles from './Movie.module.css';
+import Detail from '../Detail/Detail';
 
 export default function Movie({ movie, param }) {
     const [modal, setModal] = useState(false);
     const [message, setMessage] = useState("");
+    const [hover, setHover] = useState(false);
     const dispatch = useDispatch();
 
     function handleClick(e) {
@@ -32,9 +34,16 @@ export default function Movie({ movie, param }) {
     }
 
     return (
-        <div className={styles.row} key={movie.imdbID}>
-            <h3 className={styles.title}>{movie.Title}</h3>
-            <img className={styles.img} src={movie.Poster.length > 7 ? movie.Poster : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"} alt="" />
+        <div className={styles.row} key={movie.imdbID}  >
+
+            <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.position}>
+                {hover ?
+                    <Detail movie={movie} />
+                    : null}
+                <h3 className={styles.title}>{movie.Title}</h3>
+                <img className={styles.img} src={movie.Poster.length > 7 ? movie.Poster : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"} alt="" />
+            </div>
+
             {param === "watch" ?
                 <div className={styles.buttons}>
                     <button type="button" className="btn btn-outline-secondary" name="removeWatch" onClick={handleClick} > Remove from Watch </button>
