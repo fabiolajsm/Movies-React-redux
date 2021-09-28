@@ -23,31 +23,3 @@ export default function Movies() {
         </>
     );
 }
-
-
-// {(movies && movies.length > 0(
-//     <div className={styles.ctn}>
-//         {movies.map(movie => (
-//             <div key={movie.imdbID}>
-//                 <Movie movie={movie} />
-//             </div>
-//         ))}
-//     </div>
-// )) || (movies && watch.length > 0 && param === "watch" && (
-//     <div>
-//         {watch.map(movie => (
-//             <div key={movie.imdbID}>
-//                 <Movie movie={movie} />
-//             </div>
-//         ))}
-//     </div>
-// )) || (movies && watched.length > 0 && param === "watched" && (
-//     <div>
-//         {watched.map(movie => (
-//             <div key={movie.imdbID}>
-//                 <Movie movie={movie} />
-//             </div>
-//         ))}
-//     </div>
-// )) || <div>Algo que buscar</div>
-// }
