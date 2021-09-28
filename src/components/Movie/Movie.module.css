@@ -12,15 +12,22 @@
   border-radius: 12px
 }
 
-.title {
+.divTitle {
   color: antiquewhite;
   margin: auto;
   width: max-content;
-  max-width: 350px;
-  font-size: 27px;
+  width: 300px;
+  height: 40px;
   text-align: center;
   justify-content: center;
-  padding: 10px;
+}
+
+.title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 27px;
+  margin: 15px 0px
 }
 
 .img {
@@ -44,4 +51,6 @@
 
 .position {
   position: relative;
+  width: 354px;
+  height: 450px;
 }

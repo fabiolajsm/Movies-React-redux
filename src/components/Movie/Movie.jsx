@@ -40,7 +40,9 @@ export default function Movie({ movie, param }) {
                 {hover ?
                     <Detail movie={movie} />
                     : null}
-                <h3 className={styles.title}>{movie.Title}</h3>
+                <div className={styles.divTitle}>
+                    <h3 className={styles.title}>{movie.Title}</h3>
+                </div>
                 <img className={styles.img} src={movie.Poster.length > 7 ? movie.Poster : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"} alt="" />
             </div>
 
