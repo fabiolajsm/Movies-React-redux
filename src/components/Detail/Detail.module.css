@@ -16,5 +16,11 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 30px;
+    margin: auto;
+    color: #8ecae6;
+}
+
+.data {
+    color: #219ebc;
 }

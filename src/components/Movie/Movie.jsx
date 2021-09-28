@@ -34,7 +34,7 @@ export default function Movie({ movie, param }) {
     }
 
     return (
-        <div className={styles.row} key={movie.imdbID}  >
+        <div className={styles.wrapper} key={movie.imdbID}  >
 
             <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles.position}>
                 {hover ?
@@ -59,6 +59,7 @@ export default function Movie({ movie, param }) {
                         <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watched" onClick={handleClick} > Add Watched </button>
                     </div>
             }
+
             {modal ?
                 <div className="modal fade" id="modal" tabIndex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
                     <div className="modal-dialog" role="document">

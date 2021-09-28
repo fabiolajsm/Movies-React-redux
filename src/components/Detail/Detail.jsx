@@ -10,35 +10,22 @@ export default function Detail({ movie }) {
 
     useEffect(() => {
         dispatch(getMovieDetail(movie.imdbID))
-    }, [])
+    }, [dispatch, movie.imdbID])
 
     return (
         <div key={movie.imdbID} className={styles.container}>
             {info ?
                 <div className={styles.des}>
-                    <h5>Plot: {info.Plot}</h5>
-                    <h5>Actors: {info.Actors}</h5>
-                    <h5>Rumtime: {info.Runtime}</h5>
-                    <h5>Released: {info.Released}</h5>
+                    <h6>Plot: <span className={styles.data}>{info.Plot}</span></h6>
+                    <h6>Actors: <span className={styles.data}>{info.Actors}</span></h6>
+                    <h6>Released: <span className={styles.data}>{info.Released}</span></h6>
+                    <h6>Rumtime: <span className={styles.data}>{info.Runtime}</span></h6>
+                    <h6>Type: <span className={styles.data}>{info.Type}</span></h6>
                 </div>
-                : <div>
+                : <div className={styles.des}>
                     <h4>There is not info about this film</h4>
                 </div>
             }
-            {/* 
-
-            {/* <h5>{info.Genre}</hu5>
-            <h5>{info.Director}</h5>
-            <h5>{info.Writer}</h5>
-            <h5>{info.Actors}</h5>
-            <h5>{info.Language}</h5>
-            <h5>{info.Country}</h5>
-            <h5>{info.Awards}</h5>
-            <h5>{info.Released}</h5>
-            <h5>{info.Runtime}</h5>
-            <h5>{info.Type}</h5>
-            <h5>{info.Production}</h5>
-            <h5>{info.imdbRating}</h5> */}
-        </div>
+        </div >
     );
 };
