@@ -15,6 +15,7 @@
   color: antiquewhite;
   margin: auto;
   width: max-content;
+  max-width: 350px;
   font-size: 27px;
   text-align: center;
   justify-content: center;
