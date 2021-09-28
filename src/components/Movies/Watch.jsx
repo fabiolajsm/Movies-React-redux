@@ -11,7 +11,7 @@ export default function Watch() {
                 <div className={styles.ctn}>
                     {watch.map(movie => (
                         <div key={movie.imdbID}>
-                            <Movie movie={movie} />
+                            <Movie movie={movie} param="watch" />
                         </div>
                     ))}
                 </div>
