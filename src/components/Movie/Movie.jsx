@@ -27,12 +27,12 @@ export default function Movie({ movie, param }) {
                     :
                     <div className={styles.buttons}>
                         <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watch" onClick={() => {
-                            setMessage("added to Watch")
+                            setMessage(`added to "Watch"`)
                             setAlert(true)
                             dispatch(addWatch(movie))
                         }} > Add Watch </button>
                         <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watched" onClick={() => {
-                            setMessage("added to Watched")
+                            setMessage(`added to "Watched"`)
                             setAlert(true)
                             dispatch(addWatched(movie))
                         }} > Add Watched </button>
@@ -43,7 +43,7 @@ export default function Movie({ movie, param }) {
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <div class="modal-body" id="modalLabel">{movie.Title}, {message}!</div>
+                                <div class="modal-body" id="modalLabel">{movie.Title}, {message}</div>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
