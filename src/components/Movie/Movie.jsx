@@ -1,13 +1,35 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addWatch, addWatched, removeWatch, removeWatched } from "../../redux/actions";
 import styles from './Movie.module.css';
 
 export default function Movie({ movie, param }) {
-    const dispatch = useDispatch();
-    const [alert, setAlert] = useState(false);
+    const [modal, setModal] = useState(false);
     const [message, setMessage] = useState("");
+    const dispatch = useDispatch();
+
+    function handleClick(e) {
+        switch (e.target.name) {
+            case "watch":
+                setMessage(`added to "Watch"`)
+                setModal(true)
+                dispatch(addWatch(movie))
+                break;
+            case "watched":
+                setMessage(`added to "Watched"`)
+                setModal(true)
+                dispatch(addWatched(movie))
+                break;
+            case "removeWatch":
+                dispatch(removeWatch(movie.imdbID))
+                break;
+            case "removeWatched":
+                dispatch(removeWatched(movie.imdbID))
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
         <div className={styles.row} key={movie.imdbID}>
@@ -15,36 +37,24 @@ export default function Movie({ movie, param }) {
             <img className={styles.img} src={movie.Poster.length > 7 ? movie.Poster : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"} alt="" />
             {param === "watch" ?
                 <div className={styles.buttons}>
-                    <button type="button" className="btn btn-outline-secondary" name="removeWatch" onClick={() => {
-                        dispatch(removeWatch(movie.imdbID))
-                    }} > Remove from Watch </button>
+                    <button type="button" className="btn btn-outline-secondary" name="removeWatch" onClick={handleClick} > Remove from Watch </button>
                 </div>
                 : param === "watched" ? <div className={styles.buttons}>
-                    <button type="button" className="btn btn-outline-secondary" name="removeWatch" onClick={() => {
-                        dispatch(removeWatched(movie.imdbID))
-                    }} > Remove from Watched </button>
+                    <button type="button" className="btn btn-outline-secondary" name="removeWatched" onClick={handleClick} > Remove from Watched </button>
                 </div>
                     :
                     <div className={styles.buttons}>
-                        <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watch" onClick={() => {
-                            setMessage(`added to "Watch"`)
-                            setAlert(true)
-                            dispatch(addWatch(movie))
-                        }} > Add Watch </button>
-                        <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watched" onClick={() => {
-                            setMessage(`added to "Watched"`)
-                            setAlert(true)
-                            dispatch(addWatched(movie))
-                        }} > Add Watched </button>
+                        <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watch" onClick={handleClick} > Add Watch </button>
+                        <button type="button" className="btn btn-outline-secondary" data-toggle="modal" data-target="#modal" name="watched" onClick={handleClick} > Add Watched </button>
                     </div>
             }
-            {alert ?
-                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="modal-body" id="modalLabel">{movie.Title}, {message}</div>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            {modal ?
+                <div className="modal fade" id="modal" tabIndex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <div className="modal-body" id="modalLabel">{movie.Title}, {message}</div>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
