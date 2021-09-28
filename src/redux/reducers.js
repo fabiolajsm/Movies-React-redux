@@ -16,11 +16,9 @@ function rootReducer(state = initialState, action) {
                 moviesLoaded: action.payload.Search
             };
         case ADD_WATCH:
-            if (!state.watch.includes(action.payload)) return { ...state, watch: state.watch.concat(action.payload) };
-            break;
+            return !state.watch.includes(action.payload) ? { ...state, watch: state.watch.concat(action.payload) } : state
         case ADD_WATCHED:
-            if (!state.watched.includes(action.payload)) return { ...state, watched: state.watched.concat(action.payload) };
-            break;
+            return !state.watched.includes(action.payload) ? { ...state, watched: state.watched.concat(action.payload) } : state
         case REMOVE_WATCH:
             return { ...state, watch: state.watch.filter((movie) => movie.imdbID !== action.payload) }
         case REMOVE_WATCHED:
