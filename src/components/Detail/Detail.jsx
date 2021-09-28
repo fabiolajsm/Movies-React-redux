@@ -14,10 +14,20 @@ export default function Detail({ movie }) {
 
     return (
         <div key={movie.imdbID} className={styles.container}>
-            hoverrrrrrrrr
-            {/* <h3>{info.Title}</h3>
-            <h4 className={styles.des}>{info.Plot}</h4>
-            <h5>{info.Genre}</h5>
+            {info ?
+                <div className={styles.des}>
+                    <h5>Plot: {info.Plot}</h5>
+                    <h5>Actors: {info.Actors}</h5>
+                    <h5>Rumtime: {info.Runtime}</h5>
+                    <h5>Released: {info.Released}</h5>
+                </div>
+                : <div>
+                    <h4>There is not info about this film</h4>
+                </div>
+            }
+            {/* 
+
+            {/* <h5>{info.Genre}</hu5>
             <h5>{info.Director}</h5>
             <h5>{info.Writer}</h5>
             <h5>{info.Actors}</h5>
